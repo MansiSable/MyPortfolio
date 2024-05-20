@@ -39,8 +39,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Power PLatform Fundamentals | MICROSOFT</li>
-        <li>Data Analytics Professional | GOOGLE</li>
+        <li>The Complete 2024 Web Development Bootcamp-2024 </li>
+        <li>The Complete python bootcamp-2022</li>{" "}
+        <li>Power Platform Fundamentals | MICROSOFT-2022</li>
       </ul>
     ),
   },

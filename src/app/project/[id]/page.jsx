@@ -47,9 +47,7 @@ const projectsData = [
       "Expressjs",
       "Typescript",
       "PostgreSQL",
-      "Sequelize ORM",
-      "Firebase",
-      "Socket.Io",
+      "Prisma ORM",
     ],
     contributions: [
       "Database Design: I led the design of various database models, ensuring efficient data storage and retrieval.",
@@ -78,14 +76,13 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    tech_Stack: [
-      "Nodejs",
-      "Expressjs",
-      "Typescript",
-      "PostgreSQL",
-      "Sequelize ORM",
-      "Firebase",
-      "Socket.Io",
+    tech_Stack: ["Nodejs", "Expressjs", "Typescript", "MongoDB", "Firebase"],
+    contributions: [
+      "Creating robust and scalable database schemas using MongoDB to store and manage reservation data, client information, and statistical reports",
+      "Developing Create, Read, Update, and Delete operations to allow seamless interaction with the database.",
+      "Implementing advanced filtering and sorting functionalities to enable users to efficiently query and organize data based on various parameters.",
+      "Designing and implementing pagination features to handle large datasets and improve performance and user experience.",
+      "Ensuring seamless integration between GMS and POS to facilitate smooth data flow and operational coherence.",
     ],
   },
 ];
@@ -100,7 +97,7 @@ const page = (params) => {
     return <div>404 | Not Found</div>;
   }
   return (
-    <div className="mt-20">
+    <div className="mt-20 flex flex-col justify-between items-start gap-10 py-5">
       <h2 className="text-lg lg:text-4xl text-center w-full font-light">
         {project.title}
       </h2>
@@ -108,20 +105,22 @@ const page = (params) => {
         <div className="w-[49%] rounded-lg overflow-hidden object-cover max-w-[500px] mx-auto object-center  ">
           <Image src={project.image} width={500} height={300} />
         </div>
-        <div className=" w-[50%] ">{project.description}</div>
+        <p className=" w-[50%] font-light tracking-wide text-lg ">
+          {project.description}
+        </p>
       </div>
 
-      <div className=" w-full text-center ">
-        <span className="text-base lg:text-xl font-medium">Tech Stacks: </span>
+      <div className=" w-[80%] mx-auto  ">
+        <span className="text-lg lg:text-2xl font-light">Tech Stacks : </span>
         {project.tech_Stack.map((techName, index) =>
           index === project.tech_Stack.length - 1
             ? techName + "."
             : techName + ", "
         )}
       </div>
-      <div className="w-[80%] mx-auto">
-        <h3 className=" text-lg lg:text-2xl font-light">Contribution</h3>
-        <div>
+      <div className="w-[80%] mx-auto flex flex-col justify-between items-start gap-5 ">
+        <h3 className=" text-lg lg:text-2xl font-light">Contribution :</h3>
+        <div className="space-y-4">
           {project.contributions?.map((contribution, index) => (
             <div key={contribution}> - {contribution}</div>
           ))}
