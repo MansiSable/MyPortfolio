@@ -101,11 +101,11 @@ const page = (params) => {
       <h2 className="text-lg lg:text-4xl text-center w-full font-light">
         {project.title}
       </h2>
-      <div className="flex w-full flex-col lg:flex-row justify-between items-center">
+      <div className="flex w-full lg:w-[80%] mx-auto flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0">
         <div className="w-[49%] rounded-lg overflow-hidden object-cover max-w-[500px] mx-auto object-center  ">
           <Image src={project.image} width={500} height={300} />
         </div>
-        <p className=" w-[50%] font-light tracking-wide text-lg ">
+        <p className=" w-[80%] mx-auto lg:w-[50%] font-light tracking-wide text-lg ">
           {project.description}
         </p>
       </div>
